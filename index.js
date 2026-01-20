@@ -1,0 +1,15 @@
+const express = require("express");
+const app = express();
+
+require("./db");
+
+const todoRoutes = require("./routes/todoRoutes");
+
+app.use(express.json());
+app.use("/", todoRoutes);
+
+app.listen(3000, () => {
+  console.log("Server running on port 3000");
+});
+
+
